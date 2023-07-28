@@ -199,7 +199,8 @@ color: #de0000;
 }
 
 .today.tasks {
-  text-decoration: underline dotted 4px black;
+ background-color: yellow;
+ border-radius: 10px;
 }
 
 .past {
