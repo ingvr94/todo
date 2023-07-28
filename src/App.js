@@ -239,7 +239,7 @@ deleteDoneItem=(n,ds,c)=>{
   componentDidMount=async()=>{
     try
     {
-    const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app//');
+    const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/');
     const data = await response.json();
     data.length===0 && this.setState({isLoaded:true})
     
