@@ -30,12 +30,13 @@ header {
   position: relative;
   
 }
+
+
 header .header__logo {
     font-weight: 600;
     font-size:30px;
     cursor: pointer;  
 }
-
 
 @media (max-width:767px) {
   .header__logo_letters,main .task .task__plus_label {
@@ -332,6 +333,7 @@ color: #fff;
   border: none;
   background-color: #fff;
   transition: color 0.3s ease;
+  color: #000;
  }
 
 

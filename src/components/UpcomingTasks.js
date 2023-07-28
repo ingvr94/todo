@@ -11,7 +11,7 @@ function UpcomingTasks(props) {
     <div className='task'>
         <h2 className='task__today'>Предстоящие задачи</h2>
     </div> 
-    {!props.items.some(e=>compareAsc(e.dayItem,date)>0) && <p className='no_tasks'>Предстощих задач нет.</p>}
+    {!props.items.some(e=>compareAsc(e.dayItem,date)>0) && <p className='no_tasks'>Предстоящих задач нет.</p>}
   {
   props.items.map((el,i)=>
     
