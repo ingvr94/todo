@@ -202,15 +202,6 @@ color: #de0000;
   text-decoration: underline dotted 4px black;
 }
 
-.past_with {
-  color: grey;
-  text-decoration: underline dotted 3px black;
-}
-
-.day_with_tasks {
- text-decoration: underline dotted 3px;
-}
-
 .selected_day {
   border: 1px solid black;
   border-radius: 10px;

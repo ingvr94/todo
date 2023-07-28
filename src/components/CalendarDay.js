@@ -11,7 +11,7 @@ function CalendarDay({ day, days,selectDay,selectedDay,items}) {
                     ${isToday(d)&&'today'} 
                     ${isBefore(d,endOfYesterday())&&'past'}
                     ${d.toJSON()===selectedDay.toJSON()&&'selected_day'}  
-                    ${items.some(e=>e.dayItem.toJSON()===d.toJSON())&&'tasks'}
+                    ${items.some(e=>e.dayItem.toDateString()===d.toDateString())&&'tasks'}
                      `}>
                         {format(d, 'd')}
                     </div>
