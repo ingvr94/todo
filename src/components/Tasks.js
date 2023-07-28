@@ -52,9 +52,10 @@ function Tasks(props) {
         }
         {props.cal && 
         <>
+        {/*Отображение задач на сегодня с календарем */}
         <div className='task'>
           {format(props.selectedDay,'EEE d MMM',{locale:ruLocale})}
-          {!isBefore(props.selectedDay,endOfYesterday()) && <button className='task__plus' onClick={()=>props.showPop()}>+ Добавить задачу</button>}
+          {!isBefore(props.selectedDay,endOfYesterday()) && <button className='task__plus' onClick={()=>props.showPop()}><FaPlusCircle className='task__plus_icon'/> <span className='task__plus_label'>+ Добавить задачу</span></button>}
         </div>
         {!props.items.some(e=>e.dayItem.toDateString()===props.selectedDay.toDateString()) && <p className='no_tasks'>Задач на этот день нет.</p>}
          <div>
