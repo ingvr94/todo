@@ -41,6 +41,13 @@ header .header__logo {
   .header__logo_letters,main .task .task__plus_label {
     display: none;
   }
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu .menu_labels {
+    margin: 0;
+  }
 
   main .task .task__plus {
     background-color: #fff;
@@ -117,8 +124,8 @@ margin:10px auto 0 auto;
   }
 
 
-.menu ul li .menu__link:hover, 
-.menu ul li .menu__link_icon:hover{
+.menu ul li .menu__link:hover
+{
     color: #de0000;
   }
 
@@ -248,6 +255,7 @@ main .task .task__plus:hover {
 
 main .task .task__plus_icon {
   font-size: 24px;
+  color: #000;
 }
 
 main .no_tasks {
