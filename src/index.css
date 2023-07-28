@@ -1,13 +1,432 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&family=Roboto:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background: #fff;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+   
+}
+
+.loader {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 50px auto; 
+  padding: 0 20px;
+}
+
+
+header {
+  position: relative;
+  
+}
+header .header__logo {
+    font-weight: 600;
+    font-size:30px;
+    cursor: pointer;  
+}
+
+
+@media (max-width:767px) {
+  .header__logo_letters,main .task .task__plus_label {
+    display: none;
+  }
+
+  main .task .task__plus {
+    background-color: #fff;
+  }
+
+}
+
+@media (min-width:768px) {
+  main .task .task__plus_icon {
+    display: none;
+  }
+}
+
+header ul>li {
+  font-size: 20px;
+}
+
+header .header__nav {
+  float: right;
+  list-style: none;
+}
+
+header .header__nav li {
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  
+}
+
+.fa-calendar, .fa-plus, .fa-th {
+  transition: 0.5s color ease;
+}
+
+.fa-calendar:hover, .fa-calendar.active, .fa-plus:hover,.fa-plus.active,
+.fa-th:hover, .fa-th.active {
+  color:#dc3d3d;
+}
+
+.menu {
+display: flex;
+justify-content: space-around;
+align-items: center;
+height:auto;
+width: 100%;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+margin:10px auto 0 auto;
+}
+
+.menu ul {
+ list-style-type: none;
+ margin: 15px;
+ display: flex;
+ flex-wrap: wrap;
+  }
+
+.menu ul li {
+  margin-left: 20px;
+  cursor: pointer;
+  }
+
+.menu ul li .menu__link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.5s;
+  }
+
+  .menu ul li .menu__link_icon {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    transition: color 0.5s;
+  }
+
+
+.menu ul li .menu__link:hover, 
+.menu ul li .menu__link_icon:hover{
+    color: #de0000;
+  }
+
+ .calendar {
+ max-width: 700px;
+ margin:0 auto;
+z-index: 0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+
+}
+
+.calendar-header button {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-header button:hover {
+  transform: scale(1.1);
+}
+
+.calendar-header button:active {
+  transform: scale(0.9);
+}
+
+.calendar-table {
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendar-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+  text-align: center;
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+
+.calendar-table th {
+  font-size:14px;
+  color: #FFFFFF;
+  background-color: #000000;
+  text-transform: uppercase;
+}
+
+.calendar-table td {
+  font-size: 20px;
+  color: #333333;
+}
+
+.today { 
+color: #de0000;
+}
+
+.today.tasks {
+  text-decoration: underline dotted 4px black;
+}
+
+.past {
+  color: grey;
+}
+
+.past.tasks {
+  text-decoration: underline dotted 4px black;
+}
+
+.past_with {
+  color: grey;
+  text-decoration: underline dotted 3px black;
+}
+
+.day_with_tasks {
+ text-decoration: underline dotted 3px;
+}
+
+.selected_day {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.calendar-table td:hover {
+ color: #de0000;
+  cursor: pointer;
+}
+
+main .task {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  cursor: default;
+  margin-top: 50px;
+}
+
+main .task .task__donetasks {
+  margin: 5px;
+}
+
+main .task .task__today span {
+  color: grey;
+  font-size: 12px;
+
+}
+
+main .task .task__plus {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+ padding: 5px;
+  transition: 0.3s color ease;
+  transition: 0.3s background-color ease;
+  margin-left: 15px;
+}
+
+main .task .task__plus:hover {
+  color: white;
+  background-color: #dc3d3d;
+}
+
+main .task .task__plus_icon {
+  font-size: 24px;
+}
+
+main .no_tasks {
+  margin-top: 10px;
+  color: grey;
+  text-align: center;
+  cursor: default;
+}
+
+ .tasklist__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px auto;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.274);
+  cursor: default;
+}
+
+.tasklist__item .checklist {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.tasklist__item .tasklist__item_round {
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: .3s background-color;
+}
+
+.tasklist__item .tasklist__item_round:hover {
+ background-color: #000;
+}
+
+.tasklist__item .tasklist__item_round .check {
+font-weight: bolder;
+color: #fff;
+}
+
+.tasklist__item .taskdesc .description {
+  color: grey;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.tasklist__item .cat_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tasklist__item .dateitem {
+  font-size: 14px;
+  align-self: center;
+}
+
+
+.tasklist__item .cat_buttons .category {
+  font-size: 12px;
+  color: grey;
+  align-self: end;
+ }
+
+.tasklist__item .buttons button {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  transition: color 0.3s ease;
+ }
+
+
+.tasklist__item .buttons button:nth-child(1):hover {
+color: rgba(153, 93, 4, 0.991);
+   }
+
+
+.tasklist__item .buttons button:nth-child(2):hover {
+color:red
+  }
+
+.add_task {
+position: relative;
+overflow: auto;
+}
+
+.add_task form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  max-height: 300px;
+  padding:10px;
+  margin: 5% auto;
+  border-radius: 10px;
+  box-shadow: 6px -4px 12px 0px rgba(101, 101, 101, 0.38);
+}
+
+.add_task form input {
+  display: flex;
+  align-items: stretch;
+  border: none;
+  outline: none;
+  margin: 10px;
+}
+
+.add_task form .add_task__name { 
+  font-size: 18px;
+}
+
+.add_task form select {
+  border-radius: 5px;
+  border: 2px solid grey;
+  color: black;
+}
+
+
+.add_task form .add_task__category,.add_task form .add_task__date{
+  align-self: start;
+  width: fit-content;
+  margin: 10px;
+}
+
+.add_task form .add_task__date {
+  cursor:pointer;
+}
+
+
+.add_task form .add_task__buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin:5px;
+}
+
+.add_task form .add_task__buttons .add, 
+.add_task form .add_task__buttons .reject {
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add_task form .add_task__buttons .add {
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #ff0000;
+}
+
+.add_task form .add_task__buttons .add.inactive {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.add_task form .add_task__buttons .reject {
+  background-color: #e2e2e2;
+  color: #000000;
+  border: none;
+  font-weight: bolder;
+  opacity:0.8
+}
+
+.add_task form .add_task__buttons .reject:hover {
+  opacity:1
 }
