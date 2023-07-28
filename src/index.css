@@ -125,7 +125,8 @@ margin:10px auto 0 auto;
   }
 
 
-.menu ul li .menu__link:hover
+.menu ul li .menu__link,
+.menu ul li .menu__link_icon :hover
 {
     color: #de0000;
   }
