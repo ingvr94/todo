@@ -199,6 +199,11 @@ z-index: 0;
 color: #de0000;
 }
 
+.tasks {
+  background-color: yellow;
+  border-radius: 10px;
+ }
+
 .today.tasks {
  background-color: yellow;
  border-radius: 10px;
@@ -209,7 +214,8 @@ color: #de0000;
 }
 
 .past.tasks {
-  text-decoration: underline dotted 4px black;
+  background-color: yellow;
+  border-radius: 10px;
 }
 
 .selected_day {
