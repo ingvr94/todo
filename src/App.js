@@ -79,7 +79,7 @@ class App extends React.Component {
   }
   sendData=async()=>{
     try{
-      const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/',{
         method:'POST',
           headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -111,7 +111,7 @@ class App extends React.Component {
   }
   deleteData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/',{
       method:'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -130,7 +130,7 @@ class App extends React.Component {
   }
   deleteDoneData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/',{
       method:'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -149,7 +149,7 @@ class App extends React.Component {
   }
   editData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/',{
       method:'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -174,7 +174,7 @@ class App extends React.Component {
 
   setDatatoDone=async(index,name,desc,cat)=>{
     try{
-      const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/',{
       method:'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -239,7 +239,7 @@ deleteDoneItem=(n,ds,c)=>{
   componentDidMount=async()=>{
     try
     {
-    const response= await fetch('https://todo-backend-3n2zkx9c0-ingvr94.vercel.app/');
+    const response= await fetch('https://todo-backend-dp25q5bxO-ingvr94.vercel.app/');
     const data = await response.json();
     data.length===0 && this.setState({isLoaded:true})
     
