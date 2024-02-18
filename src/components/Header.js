@@ -13,7 +13,9 @@ export default function Header(props) {
     return (
       <header>
           <div>
+              {/* Лого хеадера */}
               <span className='header__logo'><Link style={{textDecoration:"none",color:"black"}} to='/'><FaRegClock className='fa fa-clock'/><span className='header__logo_letters'>rganizer</span></Link></span>
+              {/* Панель управления хеадера */}
               <ul className='header__nav'>
                 <li><FaRegPlusSquare title='Добавить задачу' disabled={isBefore(props.selectedDay,endOfToday())} onClick={()=>props.showPop()} className={`fa fa-plus ${props.pop && 'active'}`}/></li>
                 <li><FaRegCalendar title='Открыть календарь' onClick={()=>{props.selectDay(new Date());props.showCal()}} className={`fa fa-calendar ${props.cal && 'active'}`}/></li>
@@ -21,6 +23,7 @@ export default function Header(props) {
               </ul>
           </div>
            
+            {/* Меню с анимацией планого вертикального появления и закрытия */}
             <AnimatePresence>
               {props.menu &&
               <motion.div
@@ -32,6 +35,8 @@ export default function Header(props) {
               </motion.div>}
             </AnimatePresence>
           <AnimatePresence>
+
+          {/* Календарь с анимацией планого вертикального появления и закрытия*/}
           {props.cal &&
           <motion.div 
           initial={{height:0,opacity:0}}

@@ -6,6 +6,7 @@ import { FaRegCalendar } from "react-icons/fa";
 function NewTask(props) {
   return (
     <div className='add_task' >
+      {/* Форма ввода данных новой или редактируемой задачи */}
         <form>
         <input name="task" value={props.task} onChange={props.handleChange} className='add_task__name' placeholder='Добавить задачу'/>
         <input  name="desc" value={props.desc} onChange={props.handleChange} className='add_task__description' placeholder='Добавить описание'/>
@@ -19,6 +20,7 @@ function NewTask(props) {
         </select>
         <div className='add_task__date'><FaRegCalendar onClick={()=>props.showCal()} /> {format(props.selectedDay,'EEE d MMM',{locale:ruLocale})}</div> 
        
+       {/* Определение, создавать новую задачу или редактировать существующую */}
         <div className='add_task__buttons'>
         {!props.edit && <button className={`add_task__buttons add ${!props.task && 'inactive'}`} disabled={!props.task} onClick={()=>{props.sendData();props.setNameItem();props.hidePop();props.defaultForm()}}>Добавить</button>}
         {props.edit && <button className={`add_task__buttons add ${!props.task && 'inactive'}`} disabled={!props.task} onClick={()=>{props.editItem(props.buttonId);props.editData(props.buttonId);props.hidePop();props.showEdit()}}>Редактировать</button>}

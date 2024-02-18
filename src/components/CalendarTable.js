@@ -13,6 +13,7 @@ function CalendarTable({ date,selectDay,selectedDay,items}) {
     let days = [];
     let day = startDate;
 
+    // Цикл, записывающий в массив дни недели
     while (day <= endDate) {
         for (let i = 0; i < 7; i++) {
             days.push(day);
@@ -25,12 +26,14 @@ function CalendarTable({ date,selectDay,selectedDay,items}) {
     return (
         <table className="calendar-table">
             <thead>
+                {/* Отображение дней недели календаря */}
                 <tr>
                     {WEEK_DAYS.map((day) => (
                         <th>{day}</th>
                     ))}
                 </tr>
             </thead>
+            {/* Отображение чисел месяцев календаря */}
             <tbody>{rows?.map((row) => (
                 <CalendarDay day={row.day} date={date} days={row.days} selectDay={selectDay} 
                 selectedDay={selectedDay} items={items}/>

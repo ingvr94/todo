@@ -2,6 +2,8 @@ import React from 'react'
 import FilterOfItems from './FilterOfItems'
 import DoneItems from './DoneItems'
 
+
+// Фильтр элементов с категорией Дом и отображение на соответствующей странице
 export function Home(props) {
   return (
   <main>
@@ -16,6 +18,7 @@ export function Home(props) {
   )
 }
 
+// Фильтр элементов с категорией Работа и отображение на соответствующей странице
 export  function Work (props) {
   return (
   <main>
@@ -30,6 +33,7 @@ export  function Work (props) {
   )
 }
 
+// Фильтр элементов с категорией Хобби и отображение на соответствующей странице
 export  function Hobby (props) {
   return (
   <main>
@@ -44,6 +48,7 @@ export  function Hobby (props) {
   )
 }
 
+// Фильтр элементов с категорией Покупки и отображение на соответствующей странице
 export  function Purchases (props) {
   return (
   <main>
@@ -58,6 +63,7 @@ export  function Purchases (props) {
   )
 }
 
+// Фильтр элементов с категорией Другое и отображение на соответствующей странице
 export  function Other (props) {
   return (
   <main>
@@ -72,6 +78,7 @@ export  function Other (props) {
   )
 }
 
+// Фильтр элементов выполненных задач и отображение на соответствующей странице
 export function Done(props){
   return(
   <main>

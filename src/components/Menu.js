@@ -6,6 +6,7 @@ function Menu(props) {
 
   return (
     <div className='menu'>
+      {/* Список меню с выбором сегодняшних, предстоящих или выполненных задач */}
         <ul className='menu_labels'>
             <li>
              <Link className='menu__link'  to="/today" onClick={()=>props.selectDay(new Date())}>Сегодня</Link> 
@@ -17,6 +18,7 @@ function Menu(props) {
              <Link className='menu__link' to="/done" onClick={()=>{props.hidePop();props.hideCal()}}>Выполненные</Link>
              </li>
         </ul>
+      {/* Список для выбора категорий задач */}
         <ul >
         <li value="&#127968; Дом">
           <Link className='menu__link_icon'to="/category/home" title='Категория: Дом'><i class="uil uil-home"></i> </Link>
