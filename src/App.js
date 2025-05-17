@@ -112,7 +112,7 @@ class App extends React.Component {
   // Отправка данных на сервер для добавления задачи в БД
   sendData=async()=>{
     try{
-      const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-kappa-plum.vercel.app/',{
         method:'POST',
           headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -146,7 +146,7 @@ class App extends React.Component {
   // Запрос на сервер для удаления задачи из БД по идентификатору
   deleteData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-kappa-plum.vercel.app/',{
       method:'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -167,7 +167,7 @@ class App extends React.Component {
   // Отправка данных на сервер для удаления выполненной задачи из БД
   deleteDoneData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-kappa-plum.vercel.app/',{
       method:'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -188,7 +188,7 @@ class App extends React.Component {
   // Запрос на сервер для изменения параметров задачи в БД при ее изменении пользователем 
   editData=async(index)=>{
     try{
-      const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-kappa-plum.vercel.app/',{
       method:'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -214,7 +214,7 @@ class App extends React.Component {
   //  Запрос на сервер для пометки задачи в БД как выполненной 
   setDatatoDone=async(index,name,desc,cat)=>{
     try{
-      const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/',{
+      const response= await fetch('https://todo-backend-kappa-plum.vercel.app/',{
       method:'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -298,7 +298,7 @@ deleteDoneItem=(n,ds,c)=>{
   componentDidMount=async()=>{
     try
     {
-    const response= await fetch('https://todo-backend-dp25q5bx0-ingvr94.vercel.app/');
+    const response= await fetch('https://todo-backend-kappa-plum.vercel.app/');
     const data = await response.json();
     data.length===0 && this.setState({isLoaded:true})
     
